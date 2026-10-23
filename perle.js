@@ -1,101 +1,208 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Nos vins - Les Vignerons de Gouvieux</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Perle de Gouvieux: méthode traditionnelle, expression du terroir et informations par millésime.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+const data = {
+  "2024": {
+    perle_blanc: {
+      ingredients: "Raisins (chardonnay), sucre, levures, agents de tirage",
+      nutrition: {
+        energie: "290 kJ / 70 kcal",
+        glucides: "1,5 g",
+        sucres: "1,2 g"
+      }
+    },
+    perle_rose: {
+      ingredients: "Raisins (chardonnay, pinot noir), sucre, levures, agents de tirage",
+      nutrition: {
+        energie: "295 kJ / 71 kcal",
+        glucides: "1,7 g",
+        sucres: "1,3 g"
+      }
+    },
+    perle_blanc_de_noir: {
+      ingredients: "Raisins (pinot noir), sucre, levures, agents de tirage"
+    },
+    coteaux_chardonnay: {
+      ingredients: "Raisins (chardonnay)"
+    },
+    coteaux_pinot_noir: {
+      ingredients: "Raisins (pinot noir)"
+    }
+  },
+  "2023": {
+    perle_blanc: {
+      ingredients: "Raisins (chardonnay), sucre, levures, agents de tirage",
+      nutrition: {
+        energie: "295 kJ / 71 kcal",
+        glucides: "1,7 g",
+        sucres: "1,3 g"
+      }
+    },
+    perle_rose: {
+      ingredients: "Raisins (chardonnay, pinot noir), sucre, levures, agents de tirage",
+      nutrition: {
+        energie: "300 kJ / 72 kcal",
+        glucides: "1,8 g",
+        sucres: "1,4 g"
+      }
+    },
+    perle_blanc_de_noir: {
+      ingredients: "Raisins (pinot noir), sucre, levures, agents de tirage"
+    },
+    coteaux_chardonnay: {
+      ingredients: "Raisins (chardonnay)"
+    },
+    coteaux_pinot_noir: {
+      ingredients: "Raisins (pinot noir)"
+    }
+  },
+  "2022": {
+    perle_blanc: {
+      ingredients: "Raisins (chardonnay), sucre, levures, agents de tirage",
+      nutrition: {
+        energie: "300 kJ / 72 kcal",
+        glucides: "1,9 g",
+        sucres: "1,4 g"
+      }
+    },
+    perle_rose: {
+      ingredients: "Raisins (chardonnay, pinot noir), sucre, levures, agents de tirage",
+      nutrition: {
+        energie: "305 kJ / 73 kcal",
+        glucides: "2,0 g",
+        sucres: "1,5 g"
+      }
+    },
+    perle_blanc_de_noir: {
+      ingredients: "Raisins (pinot noir), sucre, levures, agents de tirage"
+    },
+    coteaux_chardonnay: {
+      ingredients: "Raisins (chardonnay)"
+    },
+    coteaux_pinot_noir: {
+      ingredients: "Raisins (pinot noir)"
+    }
+  }
+};
 
-  <header class="site-header">
-    <div class="container-wide header-content">
-      <a class="logo-link" href="index.html" aria-label="Accueil Les Vignerons de Gouvieux">
-        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo">
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
-      <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="association.html">L’association</a>
-        <a href="vigne.html">La vigne communale</a>
-        <a href="perle.html" class="active" aria-current="page">Nos vins</a>
-      </nav>
-    </div>
-  </header>
+const COLOR_LABELS = {
+  perle_blanc: "Perle - blanc de blancs",
+  perle_rose: "Perle - rosé",
+  perle_blanc_de_noir: "Perle - blanc de noirs",
+  coteaux_chardonnay: "Coteaux - Chardonnay",
+  coteaux_pinot_noir: "Coteaux - Pinot Noir"
+};
 
-  <main id="main-content">
-    <section class="page-intro" aria-labelledby="perle-title">
-      <div class="container-wide page-intro-grid">
-        <div>
-          <div class="section-ornament" aria-hidden="true"></div>
-          <h1 id="perle-title">Nos vins</h1>
-          <p class="section-lead">
-            Les Vignerons de Gouvieux produisent des vins effervescents — Perle de Gouvieux blanc de blancs
-            et Perle de Gouvieux rosé — ainsi que des vins tranquilles, avec le Coteaux de Gouvieux Chardonnay
-            et le Coteaux de Gouvieux Pinot noir.
-          </p>
-          <article class="content-block" aria-labelledby="appreciation-title">
-            <h2 id="appreciation-title">Appréciations</h2>
-            <p>
-              « La méthode traditionnelle 100&nbsp;% chardonnay se distingue par sa concentration, sa belle acidité
-              structurelle apportant puissance gustative, fraîcheur et longueur en bouche. L’état sanitaire et
-              le tri effectué à la vigne ainsi que la qualité du pressurage amènent beaucoup de netteté. Le
-              dosage modéré (8&nbsp;g/L) valorise l’expression du cépage et du terroir. »
-            </p>
-            <p>
-              « Le vin blanc sec de chardonnay peut être remarquable en bon millésime, il va bien souvent se
-              refermer en bouteille pour évoluer lentement en cave — parfois plus de 5 à 10 ans — pour atteindre
-              son épanouissement gustatif et développer son bouquet typique chardonnay. »
-            </p>
-          </article>
-        </div>
-        <div class="image-panel">
-          <img src="images/perle-gouvieux-bouteille.png" alt="Bouteille de La Perle de Gouvieux">
-        </div>
-      </div>
-    </section>
+function getElements() {
+  return {
+    yearSelect: document.getElementById("millesime"),
+    colorSelect: document.getElementById("couleur"),
+    contentRoot: document.getElementById("vintage-content")
+  };
+}
 
-    <section class="content-section" aria-labelledby="perle-content-title">
-      <div class="container-wide content-grid">
-        <h2 id="perle-content-title">Information nutritionnelle</h2>
+function createOption(value, label) {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = label;
+  return option;
+}
 
-        <div class="section-card vintage" aria-labelledby="vintage-title">
-          <h3 id="vintage-title">Informations par millésime</h3>
+function renderMessage(contentRoot, message) {
+  if (!contentRoot) return;
+  contentRoot.textContent = message;
+}
 
-          <form class="vintage-form" aria-label="Sélection millésime et type" onsubmit="return false;">
-            <div class="vintage-field">
-              <label for="millesime" class="vintage-label">Millésime</label>
-              <select id="millesime" class="vintage-select"></select>
-            </div>
-            <div class="vintage-field">
-              <label for="couleur" class="vintage-label">Type</label>
-              <select id="couleur" class="vintage-select"></select>
-            </div>
-          </form>
+function renderVintageInfo(contentRoot, year, color, info) {
+  if (!contentRoot) return;
 
-          <div id="vintage-content" class="vintage-content" role="status" aria-live="polite"></div>
-        </div>
-      </div>
-    </section>
+  contentRoot.replaceChildren();
 
-  </main>
+  const title = document.createElement("h3");
+  title.textContent = `Millésime ${year} - ${COLOR_LABELS[color] || color}`;
 
-  <div data-site-footer></div>
-  <noscript>
-    <footer class="site-footer">
-      <div class="container-wide footer-content">
-        <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
-        <p class="footer-meta">Association des Vignerons de Gouvieux - 60270 Gouvieux</p>
-      </div>
-    </footer>
-  </noscript>
-  <script src="footer.js"></script>
-  <script src="perle.js"></script>
-</body>
-</html>
+  const ingredients = document.createElement("p");
+  ingredients.innerHTML = `<strong>Ingrédients :</strong> ${info.ingredients || "Donnée en cours de mise à jour."}`;
+
+  const nutritionTitle = document.createElement("p");
+  nutritionTitle.innerHTML = "<strong>Informations nutritionnelles (pour 100 ml):</strong>";
+
+  if (!info.nutrition) {
+    const nutritionMessage = document.createElement("p");
+    nutritionMessage.textContent = "Données en cours de mise à jour pour ce vin.";
+    contentRoot.append(title, ingredients, nutritionTitle, nutritionMessage);
+    return;
+  }
+
+  const list = document.createElement("ul");
+
+  const energyItem = document.createElement("li");
+  energyItem.textContent = `Énergie : ${info.nutrition.energie}`;
+
+  const carbsItem = document.createElement("li");
+  carbsItem.textContent = `Glucides : ${info.nutrition.glucides}`;
+
+  const sugarItem = document.createElement("li");
+  sugarItem.textContent = `Dont sucres : ${info.nutrition.sucres}`;
+
+  list.append(energyItem, carbsItem, sugarItem);
+  contentRoot.append(title, ingredients, nutritionTitle, list);
+}
+
+function updateColorOptions() {
+  const { yearSelect, colorSelect, contentRoot } = getElements();
+  if (!yearSelect || !colorSelect || !contentRoot) return;
+
+  const year = yearSelect.value;
+  const yearData = data[year];
+
+  colorSelect.replaceChildren();
+
+  if (!yearData || Object.keys(yearData).length === 0) {
+    renderMessage(contentRoot, "Informations non disponibles pour ce millésime.");
+    return;
+  }
+
+  Object.keys(yearData).forEach((color) => {
+    colorSelect.appendChild(createOption(color, COLOR_LABELS[color] || color));
+  });
+
+  updateVintageInfo();
+}
+
+function updateVintageInfo() {
+  const { yearSelect, colorSelect, contentRoot } = getElements();
+  if (!yearSelect || !colorSelect || !contentRoot) return;
+
+  const year = yearSelect.value;
+  const color = colorSelect.value;
+  const info = data[year]?.[color];
+
+  if (!info) {
+    renderMessage(contentRoot, "Informations non disponibles pour cette sélection.");
+    return;
+  }
+
+  renderVintageInfo(contentRoot, year, color, info);
+}
+
+function initVintageSelector() {
+  const { yearSelect, colorSelect, contentRoot } = getElements();
+  if (!yearSelect || !colorSelect || !contentRoot) return;
+
+  const years = Object.keys(data).sort((a, b) => Number(b) - Number(a));
+  yearSelect.replaceChildren();
+
+  if (years.length === 0) {
+    renderMessage(contentRoot, "Aucune donnée de millésime n'est disponible actuellement.");
+    return;
+  }
+
+  years.forEach((year) => {
+    yearSelect.appendChild(createOption(year, year));
+  });
+
+  yearSelect.addEventListener("change", updateColorOptions);
+  colorSelect.addEventListener("change", updateVintageInfo);
+
+  updateColorOptions();
+}
+
+document.addEventListener("DOMContentLoaded", initVintageSelector);

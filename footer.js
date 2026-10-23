@@ -1,116 +1,62 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>L’association - Les Vignerons de Gouvieux</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Activités des vignerons de Gouvieux : travaux à la vigne, vendanges et vinification.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
-
-  <header class="site-header">
-    <div class="container-wide header-content">
-      <a class="logo-link" href="index.html" aria-label="Accueil Les Vignerons de Gouvieux">
-        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo">
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
-      <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="association.html" class="active" aria-current="page">L’association</a>
-        <a href="vigne.html">La vigne communale</a>
-        <a href="perle.html">Nos vins</a>
-      </nav>
+const FOOTER_TEMPLATE = `
+  <footer class="site-footer">
+    <div class="container-wide footer-content">
+      <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
+      <div class="footer-meta">
+        <p class="footer-address">
+          Association des Vignerons de Gouvieux<br>
+          Mairie - 48 rue de la Mairie<br>
+          60270 Gouvieux
+        </p>
+        <div class="footer-social" aria-label="Réseaux sociaux">
+          <a class="social-link facebook" href="https://www.facebook.com/VigneronsdeGouvieux" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon" aria-hidden="true">
+              <img src="images/Facebook_Logo_Primary.png" alt="" loading="lazy">
+            </span>
+            <span>Facebook</span>
+          </a>
+          <a class="social-link instagram" href="https://www.instagram.com/vigneronsdegouvieux" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon" aria-hidden="true">
+              <img src="images/Instagram_Glyph_Gradient.svg" alt="" loading="lazy">
+            </span>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
     </div>
-  </header>
+  </footer>
+`;
 
-  <main id="main-content">
-    <section class="page-intro" aria-labelledby="association-title">
-      <div class="container-wide page-intro-grid">
-        <div>
-          <div class="section-ornament" aria-hidden="true"></div>
-          <h1 id="association-title">L’association des Vignerons de Gouvieux</h1>
-          <p class="section-lead">
-            La vigne communale est exploitée par
-            l’Association des vignerons de Gouvieux depuis 2002.
-            Ce sont aujourd’hui 28 vignerons amateurs passionnés qui
-            gèrent et réalisent l’ensemble des opérations de viticulture
-            et de vinification jusqu’à la mise en bouteille.
-          </p>
-        </div>
-        <figure class="image-panel">
-          <img src="images/vigne-gouvieux.jpg" alt="Photo de l’association des Vignerons de Gouvieux">
-        </figure>
-      </div>
-    </section>
+document.querySelectorAll("[data-site-footer]").forEach((node) => {
+  node.innerHTML = FOOTER_TEMPLATE;
+});
 
-    <section class="content-section" aria-labelledby="assoc-content-title">
-      <div class="container-wide content-grid">
-        <h2 id="assoc-content-title">Activités des vignerons</h2>
+function initMobileNavigation() {
+  const toggle = document.querySelector(".nav-toggle");
+  const navigation = document.querySelector(".navigation");
 
-        <article class="content-block" aria-labelledby="travaux-title">
-          <h3 id="travaux-title">Travaux à la vigne</h3>
-          <p>
-            Les travaux de la vigne s’étalent de mars (taille) à septembre
-            (vendange). Entre-temps, ébourgeonnage, palissage, rognage,
-            effeuillage et vendange en vert sont les différentes étapes du travail
-            du vigneron.
-          </p>
-        </article>
+  if (!toggle || !navigation) return;
 
-        <div class="association-vendange-row">
-          <article class="content-block" aria-labelledby="vendange-title">
-            <h3 id="vendange-title">Vendange</h3>
-            <p>
-              Les vendanges sont effectuées à la main en deux fois : généralement
-              en septembre, lorsque le degré d’alcool potentiel atteint environ 10,5&nbsp;°
-              pour le vin mousseux, puis environ 15 jours après pour le vin tranquille.
-              L’association dispose d’un pressoir à membrane Bucher d’une capacité de
-              200 kg permettant des cycles lents d’une durée de 2&nbsp;h&nbsp;30 pour des pressages doux.
-            </p>
-          </article>
-          <figure class="image-panel vendange-side-photo">
-            <img src="images/vendange.jpg" alt="Vendange des Vignerons de Gouvieux">
-          </figure>
-        </div>
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("is-open");
+  };
 
-        <article class="content-block" aria-labelledby="vinification-title">
-          <h3 id="vinification-title">Vinification</h3>
-          <p>
-            La cave se situe dans une maison troglodytique du quartier des carrières.
-            Les conditions de température nécessaires aux opérations de vinification et
-            de stockage sont respectées (12&nbsp;°C à 14&nbsp;°C).
-          </p>
-          <p>
-            Au-delà de la surveillance des fermentations et du travail du vin, les paramètres
-            œnologiques sont suivis tout au long de l’élaboration, notamment pour le vin mousseux.
-            Les mises en bouteilles, tirage et dégorgement, après 2 ans sur lattes, sont effectués
-            à la cave.
-          </p>
-          <p>
-            Les produits utilisés et les techniques sont exclusivement adaptés à la production
-            de vins biologiques.
-          </p>
-        </article>
-      </div>
-    </section>
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("is-open", !isOpen);
+  });
 
-  </main>
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
 
-  <div data-site-footer></div>
-  <noscript>
-    <footer class="site-footer">
-      <div class="container-wide footer-content">
-        <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
-        <p class="footer-meta">Association des Vignerons de Gouvieux - 60270 Gouvieux</p>
-      </div>
-    </footer>
-  </noscript>
-  <script src="footer.js"></script>
-</body>
-</html>
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeMenu();
+    }
+  });
+}
+
+initMobileNavigation();
