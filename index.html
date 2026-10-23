@@ -1,34 +1,62 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Test pipeline – Étiquette vin</title>
-  <style>
-    body { max-width: 42rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.5; color: #2d2424; }
-    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
-    th, td { border: 1px solid #c9bebe; padding: .45rem; text-align: left; }
-    footer { margin-top: 2rem; color: #665b5b; font-size: .9rem; }
-  </style>
-</head>
-<body>
-  <main>
-    <h1>Page de test</h1>
-    <p>Le pipeline (GitHub Pages + domaine OVH) fonctionne.</p>
+const FOOTER_TEMPLATE = `
+  <footer class="site-footer">
+    <div class="container-wide footer-content">
+      <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
+      <div class="footer-meta">
+        <p class="footer-address">
+          Association des Vignerons de Gouvieux<br>
+          Mairie - 48 rue de la Mairie<br>
+          60270 Gouvieux
+        </p>
+        <div class="footer-social" aria-label="Réseaux sociaux">
+          <a class="social-link facebook" href="https://www.facebook.com/VigneronsdeGouvieux" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon" aria-hidden="true">
+              <img src="images/Facebook_Logo_Primary.png" alt="" loading="lazy">
+            </span>
+            <span>Facebook</span>
+          </a>
+          <a class="social-link instagram" href="https://www.instagram.com/vigneronsdegouvieux" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon" aria-hidden="true">
+              <img src="images/Instagram_Glyph_Gradient.svg" alt="" loading="lazy">
+            </span>
+            <span>Instagram</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+`;
 
-    <h2>Valeurs nutritionnelles pour 100 ml</h2>
-    <table>
-      <thead>
-        <tr><th>Valeur</th><th>Quantité</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Énergie</td><td>— kJ / — kcal</td></tr>
-        <tr><td>Matières grasses</td><td>— g</td></tr>
-        <tr><td>Glucides</td><td>— g</td></tr>
-      </tbody>
-    </table>
-  </main>
-  <footer>Page sans cookie ni traceur</footer>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"8607d2a720d14b038279025b2b5a82e5","spa":2}' crossorigin="anonymous"></script>
-</body>
-</html>
+document.querySelectorAll("[data-site-footer]").forEach((node) => {
+  node.innerHTML = FOOTER_TEMPLATE;
+});
+
+function initMobileNavigation() {
+  const toggle = document.querySelector(".nav-toggle");
+  const navigation = document.querySelector(".navigation");
+
+  if (!toggle || !navigation) return;
+
+  const closeMenu = () => {
+    toggle.setAttribute("aria-expanded", "false");
+    navigation.classList.remove("is-open");
+  };
+
+  toggle.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    navigation.classList.toggle("is-open", !isOpen);
+  });
+
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeMenu();
+    }
+  });
+}
+
+initMobileNavigation();

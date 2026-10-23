@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Nos vins - Les Vignerons de Gouvieux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La Perle de Gouvieux: méthode traditionnelle, expression du terroir et informations par millésime.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container-wide header-content">
+      <a class="logo-link" href="index.html" aria-label="Accueil Les Vignerons de Gouvieux">
+        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+      <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="association.html">L’association</a>
+        <a href="vigne.html">La vigne communale</a>
+        <a href="perle.html" class="active" aria-current="page">Nos vins</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-intro" aria-labelledby="perle-title">
+      <div class="container-wide page-intro-grid">
+        <div>
+          <div class="section-ornament" aria-hidden="true"></div>
+          <h1 id="perle-title">Nos vins</h1>
+          <p class="section-lead">
+            Les Vignerons de Gouvieux produisent des vins effervescents — Perle de Gouvieux blanc de blancs
+            et Perle de Gouvieux rosé — ainsi que des vins tranquilles, avec le Coteaux de Gouvieux Chardonnay
+            et le Coteaux de Gouvieux Pinot noir.
+          </p>
+          <article class="content-block" aria-labelledby="appreciation-title">
+            <h2 id="appreciation-title">Appréciations</h2>
+            <p>
+              « La méthode traditionnelle 100&nbsp;% chardonnay se distingue par sa concentration, sa belle acidité
+              structurelle apportant puissance gustative, fraîcheur et longueur en bouche. L’état sanitaire et
+              le tri effectué à la vigne ainsi que la qualité du pressurage amènent beaucoup de netteté. Le
+              dosage modéré (8&nbsp;g/L) valorise l’expression du cépage et du terroir. »
+            </p>
+            <p>
+              « Le vin blanc sec de chardonnay peut être remarquable en bon millésime, il va bien souvent se
+              refermer en bouteille pour évoluer lentement en cave — parfois plus de 5 à 10 ans — pour atteindre
+              son épanouissement gustatif et développer son bouquet typique chardonnay. »
+            </p>
+          </article>
+        </div>
+        <div class="image-panel">
+          <img src="images/perle-gouvieux-bouteille.png" alt="Bouteille de La Perle de Gouvieux">
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="perle-content-title">
+      <div class="container-wide content-grid">
+        <h2 id="perle-content-title">Information nutritionnelle</h2>
+
+        <div class="section-card vintage" aria-labelledby="vintage-title">
+          <h3 id="vintage-title">Informations par millésime</h3>
+
+          <form class="vintage-form" aria-label="Sélection millésime et type" onsubmit="return false;">
+            <div class="vintage-field">
+              <label for="millesime" class="vintage-label">Millésime</label>
+              <select id="millesime" class="vintage-select"></select>
+            </div>
+            <div class="vintage-field">
+              <label for="couleur" class="vintage-label">Type</label>
+              <select id="couleur" class="vintage-select"></select>
+            </div>
+          </form>
+
+          <div id="vintage-content" class="vintage-content" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-site-footer></div>
+  <noscript>
+    <footer class="site-footer">
+      <div class="container-wide footer-content">
+        <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
+        <p class="footer-meta">Association des Vignerons de Gouvieux - 60270 Gouvieux</p>
+      </div>
+    </footer>
+  </noscript>
+  <script src="footer.js"></script>
+  <script src="perle.js"></script>
+</body>
+</html>
