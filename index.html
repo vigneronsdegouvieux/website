@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <title>Les Vignerons de Gouvieux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Les Vignerons de Gouvieux, association au service de la culture godvicienne: vigne expérimentale, méthode traditionnelle et engagement collectif.">
+  <meta name="description" content="Les Vignerons de Gouvieux, association au service de la culture godvicienne : vigne communale, cave troglodytique et Perle de Gouvieux.">
+  <link rel="canonical" href="https://vignerons-de-gouvieux.fr/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Les Vignerons de Gouvieux">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Les Vignerons de Gouvieux">
+  <meta property="og:description" content="Les Vignerons de Gouvieux, association au service de la culture godvicienne : vigne communale, cave troglodytique et Perle de Gouvieux.">
+  <meta property="og:url" content="https://vignerons-de-gouvieux.fr/">
+  <meta property="og:image" content="https://vignerons-de-gouvieux.fr/images/partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Casiers de bouteilles étiquetés à la craie dans la cave des Vignerons de Gouvieux">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
-
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
   <header class="site-header">
     <div class="container-wide header-content">
       <a class="logo-link" href="index.html" aria-label="Accueil Les Vignerons de Gouvieux">
-        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo">
+        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo" width="52" height="52">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
       <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
@@ -30,60 +37,91 @@
         <a href="association.html">L’association</a>
         <a href="vigne.html">La vigne communale</a>
         <a href="perle.html">Nos vins</a>
+        <a href="mailto:vigneronsdegouvieux@gmail.com" class="nav-contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero" aria-labelledby="home-title">
-      <div class="container-wide hero-grid">
-        <div>
-          <span class="hero-kicker">Association des vignerons de Gouvieux</span>
-          <h1 id="home-title">Les vignerons au service de la culture godvicienne</h1>
-          <p class="section-lead">
-            L’association cultive la vigne communale depuis 2002 et fabrique principalement la
-            Perle de Gouvieux, vin mousseux selon la tradition champenoise en chardonnay et pinot noir.
+    <section class="home-hero" aria-labelledby="home-title">
+      <figure class="home-hero-image">
+        <img src="images/photos/cave-casiers-1200.jpg"
+          srcset="images/photos/cave-casiers-1200.jpg 1200w, images/photos/cave-casiers-2400.jpg 2400w"
+          sizes="100vw" alt="Casiers de bouteilles étiquetés à la craie dans la cave troglodytique" fetchpriority="high">
+      </figure>
+      <div class="container-wide home-hero-content">
+        <span class="kicker">Association des vignerons de Gouvieux</span>
+        <h1 id="home-title">Les vignerons au service de la culture godvicienne</h1>
+        <p class="lead">
+          L’association cultive la vigne communale depuis 2002 et fabrique principalement la
+          Perle de Gouvieux, vin mousseux selon la tradition champenoise en chardonnay et pinot noir.
+        </p>
+      </div>
+    </section>
+
+    <div class="container-wide">
+      <section class="figures" aria-label="L’association en chiffres">
+        <p class="figure"><span class="figure-value">2002</span><span class="figure-label">Plantation de la vigne communale</span></p>
+        <p class="figure"><span class="figure-value">28</span><span class="figure-label">Vignerons amateurs passionnés</span></p>
+        <p class="figure"><span class="figure-value">2&nbsp;500</span><span class="figure-label">Pieds de chardonnay et de pinot noir</span></p>
+      </section>
+
+      <section class="feature" aria-labelledby="home-vigne-title">
+        <figure class="photo video-slot" data-vimeo-slot data-vimeo-title="Vidéo de la vigne communale de Gouvieux"><img src="images/photos/raisins-vendange-800.jpg" srcset="images/photos/raisins-vendange-800.jpg 800w, images/photos/raisins-vendange-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Grappes de chardonnay fraîchement vendangées dans une caisse" loading="lazy"></figure>
+        <div class="feature-text prose">
+          <h2 id="home-vigne-title">La vigne communale</h2>
+          <p>
+            Situées sur un plateau orienté N-NO/S-SE, les vignes sont plantées sur un sol argilo-calcaire
+            peu profond et un sous-sol de pierre calcaire.
           </p>
+          <p>
+            Ce sont les vignerons de l’association qui assurent tous les travaux nécessaires à l’entretien de
+            la parcelle et à la bonne conduite de la vigne, de la taille aux vendanges.
+          </p>
+          <a class="text-link" href="vigne.html">Découvrir la vigne communale</a>
         </div>
-        <figure class="image-panel">
-          <img src="images/vigne-gouvieux.jpg" alt="Photo d’accueil des Vignerons de Gouvieux">
-        </figure>
-      </div>
-    </section>
+      </section>
 
-    <section class="quick-links" aria-labelledby="quick-links-title">
-      <div class="container-wide">
-        <div class="section-ornament" aria-hidden="true"></div>
-        <h2 id="quick-links-title">Accès rapides</h2>
-        <div class="cards-grid">
-          <a href="association.html" class="quick-card">
-            <span class="quick-card-title">L’association</span>
-            <span class="quick-card-subtitle">Collectif et activités.</span>
-          </a>
-          <a href="vigne.html" class="quick-card">
-            <span class="quick-card-title">La vigne communale</span>
-            <span class="quick-card-subtitle">Présentation, histoire et climat.</span>
-          </a>
-          <a href="perle.html" class="quick-card">
-            <span class="quick-card-title">Nos vins</span>
-            <span class="quick-card-subtitle">Nos productions et informations nutritionnelles.</span>
-          </a>
+      <section class="feature feature--reverse" aria-labelledby="home-cave-title">
+        <figure class="photo"><img src="images/photos/maison-troglodytique-800.jpg" srcset="images/photos/maison-troglodytique-800.jpg 800w, images/photos/maison-troglodytique-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Maison troglodytique creusée dans la roche, quartier des carrières à Gouvieux" loading="lazy"></figure>
+        <div class="feature-text prose">
+          <h2 id="home-cave-title">Vinification</h2>
+          <p>
+            La cave se situe dans une maison troglodytique du quartier des carrières.
+            Les conditions de température nécessaires aux opérations de vinification et
+            de stockage sont respectées (12&nbsp;°C à 14&nbsp;°C).
+          </p>
+          <p>
+            Les mises en bouteilles, tirage et dégorgement, après 2 ans sur lattes, sont effectués
+            à la cave.
+          </p>
+          <a class="text-link" href="association.html">Découvrir l’association</a>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <section class="feature feature-bottle" aria-labelledby="home-vins-title">
+        <figure class="photo"><img src="images/photos/perle-bouteille-600.jpg" srcset="images/photos/perle-bouteille-600.jpg 600w, images/photos/perle-bouteille-1200.jpg 1200w" sizes="(max-width: 1024px) 90vw, 420px" alt="Bouteille de Perle de Gouvieux brut blanc de blancs" loading="lazy"></figure>
+        <div class="feature-text prose">
+          <h2 id="home-vins-title">Nos vins</h2>
+          <p>
+            Les Vignerons de Gouvieux produisent des vins effervescents, Perle de Gouvieux blanc de blancs
+            et Perle de Gouvieux rosé, ainsi que des vins tranquilles, avec le Coteaux de Gouvieux Chardonnay
+            et le Coteaux de Gouvieux Pinot noir.
+          </p>
+          <a class="text-link" href="perle.html">Découvrir nos vins</a>
+        </div>
+      </section>
+    </div>
   </main>
 
   <div data-site-footer></div>
   <noscript>
     <footer class="site-footer">
       <div class="container-wide footer-content">
-        <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
-        <p class="footer-meta">Association des Vignerons de Gouvieux - 60270 Gouvieux</p>
+        <p class="footer-address">Association des Vignerons de Gouvieux<br>Mairie, 48 rue de la Mairie, 60270 Gouvieux</p>
       </div>
     </footer>
   </noscript>
   <script src="footer.js"></script>
 </body>
-
 </html>

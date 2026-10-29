@@ -5,9 +5,21 @@
   <title>L’association - Les Vignerons de Gouvieux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Activités des vignerons de Gouvieux : travaux à la vigne, vendanges et vinification.">
+  <link rel="canonical" href="https://vignerons-de-gouvieux.fr/association.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Les Vignerons de Gouvieux">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="L’association - Les Vignerons de Gouvieux">
+  <meta property="og:description" content="Activités des vignerons de Gouvieux : travaux à la vigne, vendanges et vinification.">
+  <meta property="og:url" content="https://vignerons-de-gouvieux.fr/association.html">
+  <meta property="og:image" content="https://vignerons-de-gouvieux.fr/images/partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Casiers de bouteilles étiquetés à la craie dans la cave des Vignerons de Gouvieux">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
@@ -17,7 +29,7 @@
   <header class="site-header">
     <div class="container-wide header-content">
       <a class="logo-link" href="index.html" aria-label="Accueil Les Vignerons de Gouvieux">
-        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo">
+        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo" width="52" height="52">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
       <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
@@ -25,6 +37,7 @@
         <a href="association.html" class="active" aria-current="page">L’association</a>
         <a href="vigne.html">La vigne communale</a>
         <a href="perle.html">Nos vins</a>
+        <a href="mailto:vigneronsdegouvieux@gmail.com" class="nav-contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -33,9 +46,8 @@
     <section class="page-intro" aria-labelledby="association-title">
       <div class="container-wide page-intro-grid">
         <div>
-          <div class="section-ornament" aria-hidden="true"></div>
           <h1 id="association-title">L’association des Vignerons de Gouvieux</h1>
-          <p class="section-lead">
+          <p class="lead">
             La vigne communale est exploitée par
             l’Association des vignerons de Gouvieux depuis 2002.
             Ce sont aujourd’hui 28 vignerons amateurs passionnés qui
@@ -43,28 +55,22 @@
             et de vinification jusqu’à la mise en bouteille.
           </p>
         </div>
-        <figure class="image-panel">
-          <img src="images/vigne-gouvieux.jpg" alt="Photo de l’association des Vignerons de Gouvieux">
-        </figure>
+        <figure class="photo"><img src="images/photos/equipe-vignerons-800.jpg" srcset="images/photos/equipe-vignerons-800.jpg 800w, images/photos/equipe-vignerons-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Des vignerons de l’association réunis dans la cave, devant les cuves" loading="lazy"></figure>
       </div>
     </section>
 
-    <section class="content-section" aria-labelledby="assoc-content-title">
-      <div class="container-wide content-grid">
-        <h2 id="assoc-content-title">Activités des vignerons</h2>
-
-        <article class="content-block" aria-labelledby="travaux-title">
-          <h3 id="travaux-title">Travaux à la vigne</h3>
-          <p>
-            Les travaux de la vigne s’étalent de mars (taille) à septembre
-            (vendange). Entre-temps, ébourgeonnage, palissage, rognage,
-            effeuillage et vendange en vert sont les différentes étapes du travail
-            du vigneron.
-          </p>
-        </article>
-
-        <div class="association-vendange-row">
-          <article class="content-block" aria-labelledby="vendange-title">
+    <div class="container-wide">
+      <section class="text-section" aria-labelledby="assoc-content-title">
+        <div class="split split--center">
+          <div class="prose">
+            <h2 id="assoc-content-title">Activités des vignerons</h2>
+            <h3 id="travaux-title">Travaux à la vigne</h3>
+            <p>
+              Les travaux de la vigne s’étalent de mars (taille) à septembre
+              (vendange). Entre-temps, ébourgeonnage, palissage, rognage,
+              effeuillage et vendange en vert sont les différentes étapes du travail
+              du vigneron.
+            </p>
             <h3 id="vendange-title">Vendange</h3>
             <p>
               Les vendanges sont effectuées à la main en deux fois : généralement
@@ -73,41 +79,42 @@
               L’association dispose d’un pressoir à membrane Bucher d’une capacité de
               200 kg permettant des cycles lents d’une durée de 2&nbsp;h&nbsp;30 pour des pressages doux.
             </p>
-          </article>
-          <figure class="image-panel vendange-side-photo">
-            <img src="images/vendange.jpg" alt="Vendange des Vignerons de Gouvieux">
-          </figure>
+          </div>
+          <figure class="photo"><img src="images/photos/raisins-vendange-800.jpg" srcset="images/photos/raisins-vendange-800.jpg 800w, images/photos/raisins-vendange-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 45vw" alt="Grappes de chardonnay vendangées à la main" loading="lazy"></figure>
         </div>
+      </section>
 
-        <article class="content-block" aria-labelledby="vinification-title">
-          <h3 id="vinification-title">Vinification</h3>
-          <p>
-            La cave se situe dans une maison troglodytique du quartier des carrières.
-            Les conditions de température nécessaires aux opérations de vinification et
-            de stockage sont respectées (12&nbsp;°C à 14&nbsp;°C).
-          </p>
-          <p>
-            Au-delà de la surveillance des fermentations et du travail du vin, les paramètres
-            œnologiques sont suivis tout au long de l’élaboration, notamment pour le vin mousseux.
-            Les mises en bouteilles, tirage et dégorgement, après 2 ans sur lattes, sont effectués
-            à la cave.
-          </p>
-          <p>
-            Les produits utilisés et les techniques sont exclusivement adaptés à la production
-            de vins biologiques.
-          </p>
-        </article>
-      </div>
-    </section>
-
+      <section class="text-section" aria-labelledby="vinification-title">
+        <div class="split split--center split--reverse">
+          <div class="prose">
+            <h2 id="vinification-title">Vinification</h2>
+            <p>
+              La cave se situe dans une maison troglodytique du quartier des carrières.
+              Les conditions de température nécessaires aux opérations de vinification et
+              de stockage sont respectées (12&nbsp;°C à 14&nbsp;°C).
+            </p>
+            <p>
+              Au-delà de la surveillance des fermentations et du travail du vin, les paramètres
+              œnologiques sont suivis tout au long de l’élaboration, notamment pour le vin mousseux.
+              Les mises en bouteilles, tirage et dégorgement, après 2 ans sur lattes, sont effectués
+              à la cave.
+            </p>
+            <p>
+              Les produits utilisés et les techniques sont exclusivement adaptés à la production
+              de vins biologiques.
+            </p>
+          </div>
+          <figure class="photo"><img src="images/photos/cuves-800.jpg" srcset="images/photos/cuves-800.jpg 800w, images/photos/cuves-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 45vw" alt="Cuves en inox numérotées dans la cave voûtée" loading="lazy"></figure>
+        </div>
+      </section>
+    </div>
   </main>
 
   <div data-site-footer></div>
   <noscript>
     <footer class="site-footer">
       <div class="container-wide footer-content">
-        <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
-        <p class="footer-meta">Association des Vignerons de Gouvieux - 60270 Gouvieux</p>
+        <p class="footer-address">Association des Vignerons de Gouvieux<br>Mairie, 48 rue de la Mairie, 60270 Gouvieux</p>
       </div>
     </footer>
   </noscript>

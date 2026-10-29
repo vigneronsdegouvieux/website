@@ -4,10 +4,22 @@
   <meta charset="UTF-8">
   <title>Nos vins - Les Vignerons de Gouvieux</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="La Perle de Gouvieux: méthode traditionnelle, expression du terroir et informations par millésime.">
+  <meta name="description" content="La Perle de Gouvieux et les vins des Vignerons de Gouvieux : méthode traditionnelle, chardonnay et pinot noir.">
+  <link rel="canonical" href="https://vignerons-de-gouvieux.fr/perle.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Les Vignerons de Gouvieux">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Nos vins - Les Vignerons de Gouvieux">
+  <meta property="og:description" content="La Perle de Gouvieux et les vins des Vignerons de Gouvieux : méthode traditionnelle, chardonnay et pinot noir.">
+  <meta property="og:url" content="https://vignerons-de-gouvieux.fr/perle.html">
+  <meta property="og:image" content="https://vignerons-de-gouvieux.fr/images/partage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Casiers de bouteilles étiquetés à la craie dans la cave des Vignerons de Gouvieux">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
@@ -17,7 +29,7 @@
   <header class="site-header">
     <div class="container-wide header-content">
       <a class="logo-link" href="index.html" aria-label="Accueil Les Vignerons de Gouvieux">
-        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo">
+        <img src="images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo" width="52" height="52">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
       <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
@@ -25,6 +37,7 @@
         <a href="association.html">L’association</a>
         <a href="vigne.html">La vigne communale</a>
         <a href="perle.html" class="active" aria-current="page">Nos vins</a>
+        <a href="mailto:vigneronsdegouvieux@gmail.com" class="nav-contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -33,51 +46,55 @@
     <section class="page-intro" aria-labelledby="perle-title">
       <div class="container-wide page-intro-grid">
         <div>
-          <div class="section-ornament" aria-hidden="true"></div>
           <h1 id="perle-title">Nos vins</h1>
-          <p class="section-lead">
-            Les Vignerons de Gouvieux produisent des vins effervescents — Perle de Gouvieux blanc de blancs
-            et Perle de Gouvieux rosé — ainsi que des vins tranquilles, avec le Coteaux de Gouvieux Chardonnay
+          <p class="lead">
+            Les Vignerons de Gouvieux produisent des vins effervescents, Perle de Gouvieux blanc de blancs
+            et Perle de Gouvieux rosé, ainsi que des vins tranquilles, avec le Coteaux de Gouvieux Chardonnay
             et le Coteaux de Gouvieux Pinot noir.
           </p>
-          <article class="content-block" aria-labelledby="appreciation-title">
+        </div>
+        <figure class="photo photo-bottle"><img src="images/photos/perle-bouteille-600.jpg" srcset="images/photos/perle-bouteille-600.jpg 600w, images/photos/perle-bouteille-1200.jpg 1200w" sizes="(max-width: 1024px) 90vw, 420px" alt="Bouteille de Perle de Gouvieux brut blanc de blancs" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <div class="container-wide">
+      <section class="text-section" aria-labelledby="appreciation-title">
+        <div class="split split--center">
+          <div>
             <h2 id="appreciation-title">Appréciations</h2>
-            <p>
-              « La méthode traditionnelle 100&nbsp;% chardonnay se distingue par sa concentration, sa belle acidité
-              structurelle apportant puissance gustative, fraîcheur et longueur en bouche. L’état sanitaire et
-              le tri effectué à la vigne ainsi que la qualité du pressurage amènent beaucoup de netteté. Le
-              dosage modéré (8&nbsp;g/L) valorise l’expression du cépage et du terroir. »
-            </p>
-            <p>
-              « Le vin blanc sec de chardonnay peut être remarquable en bon millésime, il va bien souvent se
-              refermer en bouteille pour évoluer lentement en cave — parfois plus de 5 à 10 ans — pour atteindre
-              son épanouissement gustatif et développer son bouquet typique chardonnay. »
-            </p>
-          </article>
+            <blockquote class="quote">
+              <p>
+                « La méthode traditionnelle 100&nbsp;% chardonnay se distingue par sa concentration, sa belle acidité
+                structurelle apportant puissance gustative, fraîcheur et longueur en bouche. L’état sanitaire et
+                le tri effectué à la vigne ainsi que la qualité du pressurage amènent beaucoup de netteté. Le
+                dosage modéré (8&nbsp;g/L) valorise l’expression du cépage et du terroir. »
+              </p>
+            </blockquote>
+            <blockquote class="quote">
+              <p>
+                « Le vin blanc sec de chardonnay peut être remarquable en bon millésime, il va bien souvent se
+                refermer en bouteille pour évoluer lentement en cave, parfois plus de 5 à 10 ans, pour atteindre
+                son épanouissement gustatif et développer son bouquet typique chardonnay. »
+              </p>
+            </blockquote>
+            <p class="quote-signature">Les Vignerons de Gouvieux</p>
+          </div>
+          <figure class="photo"><img src="images/photos/cave-ardoises-800.jpg" srcset="images/photos/cave-ardoises-800.jpg 800w, images/photos/cave-ardoises-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 45vw" alt="Bouteilles en cave rangées sous des ardoises écrites à la craie" loading="lazy"></figure>
         </div>
-        <div class="image-panel">
-          <img src="images/perle-gouvieux-bouteille.png" alt="Bouteille de La Perle de Gouvieux">
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="content-section" aria-label="Informations nutritionnelles">
-      <div class="container-wide">
-        <div class="section-card nutrition-link">
-          <p>Ingrédients et déclaration nutritionnelle de chaque vin, par millésime.</p>
-          <a class="cta-mail focus-outline" href="nutrition.html">Informations nutritionnelles</a>
-        </div>
-      </div>
-    </section>
-
+      <section class="callout" aria-label="Informations nutritionnelles">
+        <p>Ingrédients et déclaration nutritionnelle de chaque vin, par millésime.</p>
+        <a class="button" href="nutrition.html">Informations nutritionnelles</a>
+      </section>
+    </div>
   </main>
 
   <div data-site-footer></div>
   <noscript>
     <footer class="site-footer">
       <div class="container-wide footer-content">
-        <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
-        <p class="footer-meta">Association des Vignerons de Gouvieux - 60270 Gouvieux</p>
+        <p class="footer-address">Association des Vignerons de Gouvieux<br>Mairie, 48 rue de la Mairie, 60270 Gouvieux</p>
       </div>
     </footer>
   </noscript>

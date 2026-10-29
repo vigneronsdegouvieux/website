@@ -1,27 +1,20 @@
+// Vidéo Vimeo de la vigne : coller ici l'identifiant de la vidéo (les chiffres à la fin
+// de l'adresse vimeo.com/123456789). Tant qu'il est vide, la photo reste affichée.
+const VIMEO_VIDEO_ID = "";
+
+const ICON_FACEBOOK = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 8.5V6.8c0-.8.5-1 .9-1h2.4V2.1L14 2c-3.6 0-4.4 2.7-4.4 4.4v2.1H7.5v3.9h2.1V22H14v-9.6h3l.4-3.9H14z" fill="currentColor"/></svg>`;
+const ICON_INSTAGRAM = `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>`;
+
 const FOOTER_TEMPLATE = `
   <footer class="site-footer">
     <div class="container-wide footer-content">
-      <a class="cta-mail focus-outline" href="mailto:vigneronsdegouvieux@gmail.com">Contact email</a>
-      <div class="footer-meta">
-        <p class="footer-address">
-          Association des Vignerons de Gouvieux<br>
-          Mairie - 48 rue de la Mairie<br>
-          60270 Gouvieux
-        </p>
-        <div class="footer-social" aria-label="Réseaux sociaux">
-          <a class="social-link facebook" href="https://www.facebook.com/VigneronsdeGouvieux" target="_blank" rel="noopener noreferrer">
-            <span class="social-icon" aria-hidden="true">
-              <img src="images/Facebook_Logo_Primary.png" alt="" loading="lazy">
-            </span>
-            <span>Facebook</span>
-          </a>
-          <a class="social-link instagram" href="https://www.instagram.com/vigneronsdegouvieux" target="_blank" rel="noopener noreferrer">
-            <span class="social-icon" aria-hidden="true">
-              <img src="images/Instagram_Glyph_Gradient.svg" alt="" loading="lazy">
-            </span>
-            <span>Instagram</span>
-          </a>
-        </div>
+      <p class="footer-address">
+        Association des Vignerons de Gouvieux<br>
+        Mairie, 48 rue de la Mairie, 60270 Gouvieux
+      </p>
+      <div class="footer-social">
+        <a class="social-link" href="https://www.facebook.com/VigneronsdeGouvieux" target="_blank" rel="noopener noreferrer" aria-label="Facebook">${ICON_FACEBOOK}</a>
+        <a class="social-link" href="https://www.instagram.com/vigneronsdegouvieux" target="_blank" rel="noopener noreferrer" aria-label="Instagram">${ICON_INSTAGRAM}</a>
       </div>
     </div>
   </footer>
@@ -30,6 +23,20 @@ const FOOTER_TEMPLATE = `
 document.querySelectorAll("[data-site-footer]").forEach((node) => {
   node.innerHTML = FOOTER_TEMPLATE;
 });
+
+function initVimeo() {
+  if (!VIMEO_VIDEO_ID) return;
+  document.querySelectorAll("[data-vimeo-slot]").forEach((slot) => {
+    const frame = document.createElement("iframe");
+    frame.src = `https://player.vimeo.com/video/${encodeURIComponent(VIMEO_VIDEO_ID)}?dnt=1&title=0&byline=0&portrait=0&color=2F4A3D`;
+    frame.title = slot.getAttribute("data-vimeo-title") || "Vidéo de la vigne communale";
+    frame.allow = "autoplay; fullscreen; picture-in-picture";
+    frame.loading = "lazy";
+    frame.setAttribute("allowfullscreen", "");
+    slot.replaceChildren(frame);
+    slot.classList.add("is-video");
+  });
+}
 
 function initMobileNavigation() {
   const toggle = document.querySelector(".nav-toggle");
@@ -59,4 +66,5 @@ function initMobileNavigation() {
   });
 }
 
+initVimeo();
 initMobileNavigation();
