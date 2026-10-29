@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Page introuvable - Les Vignerons de Gouvieux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="preload" href="/fonts/playfair-display-600.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
+
+  <header class="site-header">
+    <div class="container-wide header-content">
+      <a class="logo-link" href="/index.html" aria-label="Accueil Les Vignerons de Gouvieux">
+        <img src="/images/logo_vigneron.svg" alt="Logo Les Vignerons de Gouvieux" class="logo" width="52" height="52">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+      <nav id="site-navigation" class="navigation" aria-label="Navigation principale">
+        <a href="/index.html">Accueil</a>
+        <a href="/association.html">L’association</a>
+        <a href="/vigne.html">La vigne communale</a>
+        <a href="/perle.html">Nos vins</a>
+        <a href="mailto:vigneronsdegouvieux@gmail.com" class="nav-contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-intro" aria-labelledby="not-found-title">
+      <div class="container-wide">
+        <span class="kicker">Erreur 404</span>
+        <h1 id="not-found-title">Page introuvable</h1>
+        <p class="lead">La page que vous cherchez n’existe pas ou a été déplacée.</p>
+        <a class="button" href="/">Retour à l’accueil</a>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <noscript>
+    <footer class="site-footer">
+      <div class="container-wide footer-content">
+        <p class="footer-address">Association des Vignerons de Gouvieux<br>Mairie, 48 rue de la Mairie, 60270 Gouvieux</p>
+      </div>
+    </footer>
+  </noscript>
+  <script src="/site.js"></script>
+</body>
+</html>

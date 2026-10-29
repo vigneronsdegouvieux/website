@@ -23,7 +23,7 @@
     <div class="container">
       <h1 class="nutrition-title">Informations nutritionnelles</h1>
 
-      <form class="vintage-form" aria-label="Sélection du vin" onsubmit="return false;">
+      <div class="vintage-form" role="group" aria-label="Sélection du vin">
         <div class="vintage-field">
           <label for="millesime" class="vintage-label">Millésime</label>
           <select id="millesime" class="vintage-select"></select>
@@ -32,9 +32,9 @@
           <label for="couleur" class="vintage-label">Vin</label>
           <select id="couleur" class="vintage-select"></select>
         </div>
-      </form>
+      </div>
 
-      <section id="vintage-content" class="vintage-content nutrition-card" role="status" aria-live="polite">
+      <section id="vintage-content" class="vintage-content" role="status" aria-live="polite">
         <noscript>Activez JavaScript pour afficher les informations de votre bouteille.</noscript>
       </section>
     </div>
@@ -44,7 +44,7 @@
     <div class="container">
       <p>
         <a href="index.html">Association des Vignerons de Gouvieux</a><br>
-        Mairie - 48 rue de la Mairie - 60270 Gouvieux
+        Mairie, 48 rue de la Mairie, 60270 Gouvieux
       </p>
     </div>
   </footer>

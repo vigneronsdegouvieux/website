@@ -17,9 +17,8 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Casiers de bouteilles étiquetés à la craie dans la cave des Vignerons de Gouvieux">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" href="fonts/playfair-display-600.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 </head>
@@ -47,7 +46,7 @@
       <figure class="home-hero-image">
         <img src="images/photos/cave-casiers-1200.jpg"
           srcset="images/photos/cave-casiers-1200.jpg 1200w, images/photos/cave-casiers-2400.jpg 2400w"
-          sizes="100vw" alt="Casiers de bouteilles étiquetés à la craie dans la cave troglodytique" fetchpriority="high">
+          sizes="100vw" alt="Casiers de bouteilles étiquetés à la craie dans la cave troglodytique" fetchpriority="high" width="1200" height="800">
       </figure>
       <div class="container-wide home-hero-content">
         <span class="kicker">Association des vignerons de Gouvieux</span>
@@ -67,7 +66,7 @@
       </section>
 
       <section class="feature" aria-labelledby="home-vigne-title">
-        <figure class="photo video-slot" data-vimeo-slot data-vimeo-title="Vidéo de la vigne communale de Gouvieux"><img src="images/photos/raisins-vendange-800.jpg" srcset="images/photos/raisins-vendange-800.jpg 800w, images/photos/raisins-vendange-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Grappes de chardonnay fraîchement vendangées dans une caisse" loading="lazy"></figure>
+        <figure class="photo video-slot" data-vimeo-slot data-vimeo-title="Vidéo de la vigne communale de Gouvieux"><img src="images/photos/raisins-vendange-800.jpg" srcset="images/photos/raisins-vendange-800.jpg 800w, images/photos/raisins-vendange-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Grappes de chardonnay fraîchement vendangées dans une caisse" loading="lazy" width="800" height="534"></figure>
         <div class="feature-text prose">
           <h2 id="home-vigne-title">La vigne communale</h2>
           <p>
@@ -83,7 +82,7 @@
       </section>
 
       <section class="feature feature--reverse" aria-labelledby="home-cave-title">
-        <figure class="photo"><img src="images/photos/maison-troglodytique-800.jpg" srcset="images/photos/maison-troglodytique-800.jpg 800w, images/photos/maison-troglodytique-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Maison troglodytique creusée dans la roche, quartier des carrières à Gouvieux" loading="lazy"></figure>
+        <figure class="photo"><img src="images/photos/maison-troglodytique-800.jpg" srcset="images/photos/maison-troglodytique-800.jpg 800w, images/photos/maison-troglodytique-1600.jpg 1600w" sizes="(max-width: 1024px) 100vw, 50vw" alt="Maison troglodytique creusée dans la roche, quartier des carrières à Gouvieux" loading="lazy" width="800" height="534"></figure>
         <div class="feature-text prose">
           <h2 id="home-cave-title">Vinification</h2>
           <p>
@@ -100,7 +99,7 @@
       </section>
 
       <section class="feature feature-bottle" aria-labelledby="home-vins-title">
-        <figure class="photo"><img src="images/photos/perle-bouteille-600.jpg" srcset="images/photos/perle-bouteille-600.jpg 600w, images/photos/perle-bouteille-1200.jpg 1200w" sizes="(max-width: 1024px) 90vw, 420px" alt="Bouteille de Perle de Gouvieux brut blanc de blancs" loading="lazy"></figure>
+        <figure class="photo"><img src="images/photos/perle-bouteille-600.jpg" srcset="images/photos/perle-bouteille-600.jpg 600w, images/photos/perle-bouteille-1200.jpg 1200w" sizes="(max-width: 1024px) 90vw, 420px" alt="Bouteille de Perle de Gouvieux brut blanc de blancs" loading="lazy" width="600" height="800"></figure>
         <div class="feature-text prose">
           <h2 id="home-vins-title">Nos vins</h2>
           <p>
@@ -122,6 +121,6 @@
       </div>
     </footer>
   </noscript>
-  <script src="footer.js"></script>
+  <script src="site.js"></script>
 </body>
 </html>
