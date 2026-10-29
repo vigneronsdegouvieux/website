@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Informations nutritionnelles - Les Vignerons de Gouvieux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ingrédients et déclaration nutritionnelle des vins des Vignerons de Gouvieux, par millésime.">
+  <!-- Page atteinte par le QR code des étiquettes : volontairement sans contenu commercial,
+       sans menu, sans réseaux sociaux ni ressources tierces (polices, statistiques…). -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body class="nutrition-page">
+  <header class="nutrition-header">
+    <div class="container">
+      <a href="index.html" class="nutrition-logo-link" aria-label="Accueil - Les Vignerons de Gouvieux">
+        <img src="images/logo_vigneron.svg" alt="Les Vignerons de Gouvieux" class="nutrition-logo">
+      </a>
+    </div>
+  </header>
+
+  <main id="main-content" class="nutrition-main">
+    <div class="container">
+      <h1 class="nutrition-title">Informations nutritionnelles</h1>
+
+      <form class="vintage-form" aria-label="Sélection du vin" onsubmit="return false;">
+        <div class="vintage-field">
+          <label for="millesime" class="vintage-label">Millésime</label>
+          <select id="millesime" class="vintage-select"></select>
+        </div>
+        <div class="vintage-field">
+          <label for="couleur" class="vintage-label">Vin</label>
+          <select id="couleur" class="vintage-select"></select>
+        </div>
+      </form>
+
+      <section id="vintage-content" class="vintage-content nutrition-card" role="status" aria-live="polite">
+        <noscript>Activez JavaScript pour afficher les informations de votre bouteille.</noscript>
+      </section>
+    </div>
+  </main>
+
+  <footer class="nutrition-footer">
+    <div class="container">
+      <p>
+        <a href="index.html">Association des Vignerons de Gouvieux</a><br>
+        Mairie - 48 rue de la Mairie - 60270 Gouvieux
+      </p>
+    </div>
+  </footer>
+
+  <script src="nutrition.js"></script>
+</body>
+</html>

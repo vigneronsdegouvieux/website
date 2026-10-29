@@ -636,3 +636,135 @@ select:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+/* Page des informations nutritionnelles (QR code des étiquettes) */
+.nutrition-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrition-header {
+  padding: var(--space-3) 0 0;
+}
+
+.nutrition-logo {
+  height: 56px;
+  width: auto;
+}
+
+.nutrition-main {
+  flex: 1;
+  padding: var(--space-3) 0 var(--space-5);
+}
+
+.nutrition-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 5vw, 2.4rem);
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+
+.nutrition-card h2,
+.nutrition-card h3 {
+  margin: 0;
+}
+
+.nutrition-wine {
+  font-family: var(--font-title);
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.nutrition-vintage {
+  margin: 0.15rem 0 var(--space-3);
+  color: var(--color-mineral);
+}
+
+.nutrition-heading {
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-mineral);
+  margin-top: var(--space-3) !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.nutrition-ingredients,
+.nutrition-pending {
+  margin: 0;
+}
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  padding: 0.55rem 0;
+  border-bottom: var(--line-fine) solid rgba(47, 74, 61, 0.15);
+  text-align: left;
+  font-weight: 400;
+}
+
+.nutrition-table thead th {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--color-mineral);
+  border-bottom: var(--line-strong) solid rgba(47, 74, 61, 0.3);
+}
+
+.nutrition-table td,
+.nutrition-table thead th:last-child {
+  text-align: right;
+}
+
+.nutrition-table tbody th {
+  font-weight: 500;
+}
+
+.nutrition-table .nutrition-sub th {
+  padding-left: 1rem;
+  font-weight: 400;
+  color: var(--color-mineral);
+}
+
+.nutrition-footer {
+  padding: var(--space-3) 0 var(--space-4);
+  font-size: 0.86rem;
+  color: var(--color-mineral);
+}
+
+.nutrition-footer p {
+  margin: 0;
+}
+
+.nutrition-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.nutrition-link p {
+  margin: 0;
+  color: var(--color-mineral);
+}
+
+@media (max-width: 560px) {
+  .nutrition-page .vintage-form {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+}
+
+.nutrition-logo-link {
+  display: inline-block;
+}
+
+.nutrition-footer a {
+  color: inherit;
+}

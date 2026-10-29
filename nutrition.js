@@ -105,6 +105,13 @@ function createOption(value, label) {
   return option;
 }
 
+function createElement(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text !== undefined) element.textContent = text;
+  return element;
+}
+
 function renderMessage(contentRoot, message) {
   if (!contentRoot) return;
   contentRoot.textContent = message;
@@ -115,43 +122,53 @@ function renderVintageInfo(contentRoot, year, color, info) {
 
   contentRoot.replaceChildren();
 
-  const title = document.createElement("h3");
-  title.textContent = `Millésime ${year} - ${COLOR_LABELS[color] || color}`;
+  const title = createElement("h2", "nutrition-wine", COLOR_LABELS[color] || color);
+  const vintage = createElement("p", "nutrition-vintage", `Millésime ${year}`);
 
-  const ingredients = document.createElement("p");
-  ingredients.innerHTML = `<strong>Ingrédients :</strong> ${info.ingredients || "Donnée en cours de mise à jour."}`;
+  const ingredientsTitle = createElement("h3", "nutrition-heading", "Ingrédients");
+  const ingredients = createElement("p", "nutrition-ingredients", info.ingredients || "Donnée en cours de mise à jour.");
 
-  const nutritionTitle = document.createElement("p");
-  nutritionTitle.innerHTML = "<strong>Informations nutritionnelles (pour 100 ml):</strong>";
+  const nutritionTitle = createElement("h3", "nutrition-heading", "Déclaration nutritionnelle");
+
+  contentRoot.append(title, vintage, ingredientsTitle, ingredients, nutritionTitle);
 
   if (!info.nutrition) {
-    const nutritionMessage = document.createElement("p");
-    nutritionMessage.textContent = "Données en cours de mise à jour pour ce vin.";
-    contentRoot.append(title, ingredients, nutritionTitle, nutritionMessage);
+    contentRoot.append(createElement("p", "nutrition-pending", "Données en cours de mise à jour pour ce vin."));
     return;
   }
 
-  const list = document.createElement("ul");
+  const table = createElement("table", "nutrition-table");
+  const head = table.createTHead().insertRow();
+  head.append(createElement("th", "", ""), createElement("th", "", "Pour 100 ml"));
+  head.cells[0].scope = "col";
+  head.cells[1].scope = "col";
 
-  const energyItem = document.createElement("li");
-  energyItem.textContent = `Énergie : ${info.nutrition.energie}`;
+  const body = table.createTBody();
+  const rows = [
+    ["Énergie", info.nutrition.energie, ""],
+    ["Glucides", info.nutrition.glucides, ""],
+    ["dont sucres", info.nutrition.sucres, "nutrition-sub"]
+  ];
 
-  const carbsItem = document.createElement("li");
-  carbsItem.textContent = `Glucides : ${info.nutrition.glucides}`;
+  rows.forEach(([label, value, className]) => {
+    if (!value) return;
+    const row = body.insertRow();
+    if (className) row.className = className;
+    const header = createElement("th", "", label);
+    header.scope = "row";
+    row.append(header, createElement("td", "", value));
+  });
 
-  const sugarItem = document.createElement("li");
-  sugarItem.textContent = `Dont sucres : ${info.nutrition.sucres}`;
-
-  list.append(energyItem, carbsItem, sugarItem);
-  contentRoot.append(title, ingredients, nutritionTitle, list);
+  contentRoot.append(table);
 }
 
-function updateColorOptions() {
+function updateColorOptions(preferredColor) {
   const { yearSelect, colorSelect, contentRoot } = getElements();
   if (!yearSelect || !colorSelect || !contentRoot) return;
 
   const year = yearSelect.value;
   const yearData = data[year];
+  const previousColor = typeof preferredColor === "string" ? preferredColor : colorSelect.value;
 
   colorSelect.replaceChildren();
 
@@ -163,6 +180,10 @@ function updateColorOptions() {
   Object.keys(yearData).forEach((color) => {
     colorSelect.appendChild(createOption(color, COLOR_LABELS[color] || color));
   });
+
+  if (previousColor && yearData[previousColor]) {
+    colorSelect.value = previousColor;
+  }
 
   updateVintageInfo();
 }
@@ -199,7 +220,7 @@ function initVintageSelector() {
     yearSelect.appendChild(createOption(year, year));
   });
 
-  yearSelect.addEventListener("change", updateColorOptions);
+  yearSelect.addEventListener("change", () => updateColorOptions());
   colorSelect.addEventListener("change", updateVintageInfo);
 
   updateColorOptions();
