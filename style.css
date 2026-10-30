@@ -605,11 +605,18 @@ select:focus-visible {
 .vintage-select {
   appearance: none;
   border: var(--line-fine) solid rgba(47, 74, 61, 0.3);
-  background: var(--color-white);
+  /* Flèche vers le bas : indique que le champ est un menu à choix */
+  background: var(--color-white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 6l4.5 4.5L12.5 6' fill='none' stroke='%232F4A3D' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 0.9rem center / 1rem;
   color: var(--color-vine-deep);
   border-radius: var(--radius-sm);
-  padding: 0.82rem 0.9rem;
+  padding: 0.82rem 2.6rem 0.82rem 0.9rem;
   font: inherit;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.vintage-select:hover {
+  border-color: var(--color-vine-soft);
 }
 
 .vintage-select:focus-visible {
