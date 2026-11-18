@@ -424,13 +424,6 @@ p {
   margin-top: var(--space-1);
 }
 
-.feature-bottle .photo,
-.photo-bottle {
-  max-width: 340px;
-  width: 100%;
-  justify-self: center;
-}
-
 /* Pages intérieures */
 .page-intro {
   padding: var(--space-6) 0 var(--space-5);
